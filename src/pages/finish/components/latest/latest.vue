@@ -1,5 +1,5 @@
 <template>
-  <scroll class="latest" :data="videoList" :pullup="pullup" @scrollToEnd="_getMore">
+  <scroll class="finish-latest" :data="videoList" :pullup="pullup" @scrollToEnd="_getMore">
     <div class="latest-wrap">
       <video-list :videoList="videoList" @selectItem="selectItem"></video-list>
       <loading v-show="hasMore" title=""></loading>
@@ -11,7 +11,7 @@
   import Scroll from 'base/scroll/scroll'
   import VideoList from 'components/video-list/video-list'
   import Loading from 'base/loading/loading'
-  import {getWJLatestList} from 'api/finish/latest/latest'
+  import {getLZLatestList} from 'api/serialization/latest/latest'
   import {ERR_OK} from 'api/config'
   import {selectMixin} from 'common/js/mixins'
 
@@ -23,8 +23,8 @@
       return {
         page:1,
         hasMore:true,
-        pullup:true,
-        videoList:[]
+        videoList:[],
+        pullup:true
       }
     },
     created(){
@@ -32,7 +32,7 @@
     },
     methods:{
       _getLZLatestList(){
-        getWJLatestList(this.page).then((res)=>{
+        getLZLatestList(this.page).then((res)=>{
           if(res.code === ERR_OK){
             this.videoList = res.data.archives;
             this._checkMore(res.data.page.count,this.page)
@@ -44,7 +44,7 @@
           return
         }
         this.page++;
-        getWJLatestList(this.page).then((res)=>{
+        getLZLatestList(this.page).then((res)=>{
           if(res.code === ERR_OK){
             this.videoList = this.videoList.concat(res.data.archives);
             this._checkMore(res.data.page.count,this.page)
@@ -69,13 +69,10 @@
 </script>
 
 <style rel="stylesheet/stylus" lang="stylus" scoped>
-  .latest
-    position:fixed
-    width:100%
-    top:84px
-    bottom:60px
-    overflow:hidden
+  @import "~common/stylus/variable"
+  .finish-latest
     .latest-wrap
       padding-top:20px
 
 </style>
+

@@ -7,8 +7,8 @@ import store from './store'
 import fastclick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import Mint from 'mint-ui'
-import VueLazyload from 'vue-lazyload'
-
+//import VueLazyload from 'vue-lazyload'
+//import { Lazyload } from 'mint-ui';
 
 import 'common/stylus/index.styl'
 import 'common/stylus/iconfont.css'
@@ -20,11 +20,12 @@ fastclick.attach(document.body);
 Vue.config.productionTip = false;
 Vue.use(VueAwesomeSwiper);
 Vue.use(Mint);
+// Vue.use(Lazyload);
 
-Vue.use(VueLazyload,{
-  preLoad: 1.3,
-  loading:'./common/image/default.png'
-})
+// Vue.use(VueLazyload,{
+//   preLoad: 1.3,
+//   loading:'./common/image/default.png'
+// })
 
 /* eslint-disable no-new */
 new Vue({

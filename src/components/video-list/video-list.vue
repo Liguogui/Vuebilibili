@@ -101,8 +101,16 @@
               width: 100%
               height:0
               padding-bottom:64.22%
+              background-color: $color-background
               .item-img
                 width:100%
+              .item-img[lazy=loading]
+                width:40px
+                height:40px
+                position:absolute
+                top: 50%
+                left: 50%
+                transform:translate3d(-50%,-50%,0)
               .item-play-disc
                 width:100%
                 box-sizing:border-box

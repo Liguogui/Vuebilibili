@@ -105,6 +105,7 @@
             display:flex
             align-items: center
             .img-wrap
+              position:relative
               flex:0 0 117px
               width:117px
               height: 0
@@ -113,6 +114,13 @@
               border-radius:10px
               .item-img
                 width:100%
+              .item-img[lazy=loading]
+                width:40px
+                height:40px
+                position:absolute
+                top: 50%
+                left: 50%
+                transform:translate3d(-50%,-50%,0)
             .item-disc
               flex:1
               box-sizing:border-box

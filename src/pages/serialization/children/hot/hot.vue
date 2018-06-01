@@ -1,5 +1,5 @@
 <template>
-   <scroll :data="videoList" class="serialization-hot">
+   <scroll class="serialization-hot" :data="videoList">
         <div class="vedio-wrap">
           <video-list :videoList="videoList" @selectItem="selectItem"></video-list>
         </div>
@@ -40,6 +40,7 @@
 </script>
 
 <style rel="stylesheet/stylus" lang="stylus" scoped>
+  @import "~common/stylus/variable"
   .serialization-hot
     position:fixed
     width:100%

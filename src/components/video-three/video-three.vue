@@ -53,11 +53,20 @@
         background-color: $color-white;
         box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;
         .img-wrap
+          position:relative
           width:100%
           height:151px
+          background-color: $color-background
           .img
             width:100%
             height:151px
+          .img[lazy=loading]
+            width:40px
+            height:40px
+            position:absolute
+            top: 50%
+            left: 50%
+            transform:translate3d(-50%,-50%,0)
         .title
           padding-top:5px
           text-align:left

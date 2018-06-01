@@ -1,9 +1,9 @@
 <template>
-   <scroll class="latest" :data="videoList" :pullup="pullup" @scrollToEnd="_getMore">
-     <div class="latest-wrap">
+   <scroll class="serialization-latest" :data="videoList" :pullup="pullup" @scrollToEnd="_getMore">
+      <div class="latest-wrap">
         <video-list :videoList="videoList" @selectItem="selectItem"></video-list>
         <loading v-show="hasMore" title=""></loading>
-     </div>
+      </div>
    </scroll>
 </template>
 
@@ -23,8 +23,8 @@
         return {
           page:1,
           hasMore:true,
-          pullup:true,
-          videoList:[]
+          videoList:[],
+          pullup:true
         }
       },
       created(){
@@ -69,7 +69,8 @@
 </script>
 
 <style rel="stylesheet/stylus" lang="stylus" scoped>
-  .latest
+  @import "~common/stylus/variable"
+  .serialization-latest
     position:fixed
     width:100%
     top:84px

@@ -21,6 +21,7 @@
 <style rel="stylesheet/stylus" lang="stylus" scoped>
   @import "~common/stylus/variable"
   .home-tab
+    width:100%
     height:40px
     display:flex
     margin: 0 auto

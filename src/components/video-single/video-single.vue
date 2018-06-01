@@ -50,13 +50,22 @@
         width: 100%
         height: 100%
         .img-wrap
+          position:relative
           width: 100%
           height:0
           padding-bottom:33.3%
           overflow:hidden
+          background-color: $color-background
           .item-img
             width:100%
             transform:translate3d(0,-15%,0)
+          .item-img[lazy=loading]
+            width:40px
+            height:40px
+            position:absolute
+            top: 50%
+            left: 50%
+            transform:translate3d(-50%,-50%,0)
         .disc-wrap
           text-align:left
           padding:10px
